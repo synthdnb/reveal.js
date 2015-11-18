@@ -15,7 +15,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
 
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -41,346 +41,267 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Reveal.js</h1>
-					<h3>The HTML Presentation Framework</h3>
+					<h1>Ruby</h1>
 					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
+						<small>Created by <a href="http://hakim.se">Minkyu Kim</a> / <a href="http://twitter.com/iteratorP">@iteratorP</a></small>
 					</p>
 				</section>
 
-				<section>
-					<h2>Hello There</h2>
-					<p>
-						reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
-					</p>
-				</section>
-
-				<!-- Example of nested vertical slides -->
 				<section>
 					<section>
-						<h2>Vertical Slides</h2>
-						<p>Slides can be nested inside of each other.</p>
-						<p>Use the <em>Space</em> key to navigate through all slides.</p>
-						<br>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
+						<h2>준비하기</h2>
+						<p>혹시 시스템 루비를 쓰고계신가요?</p>
+							<pre><code class="bash" data-trim>
+					which ruby
+						</code></pre>
+						
+					</section>
+					
+					<section data-background="http://i.giphy.com/14aUO0Mf7dWDXW.gif">
+						<h1>새로 깝시다...</h1>
+					</section>
+
+					<section>
+						<h2>Installation</h2>
+						<pre><code class="bash" data-trim>
+	brew install ruby-install --HEAD
+						</code></pre>
+						<pre><code class="bash" data-trim>
+	brew install chruby 
+						</code></pre>
+						<pre><code class="bash" data-trim>
+	ruby-install ruby
+						</code></pre>
+						<pre><code class="bash" data-trim>
+	chruby 2.2.3
+						</code></pre>
+						<p>마지막 줄을 rc에 넣으세요!</p>
 					</section>
 					<section>
-						<h2>Basement Level 1</h2>
-						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
+						<h2>일단 몇가지 하고 시작해요</h2>
+						<p><small><strike>이게 뭔지는 나중에</strike></small></p>
+						<pre><code class="bash" data-trim>gem update --system</code></pre>
+						<pre><code class="bash" data-trim>gem install pry</code></pre>
+						<pre><code class="bash" data-trim>gem install bundler</code></pre>
+					</section>
+				
+				</section>
+
+				
+				<section>
+					<section>
+						<h2>새 언어를 배울때 하는 신성한 의식</h2>
+						<pre class="fragment" ><code class="ruby" data-trim>puts "Hello world!"</code></pre>
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h2>The Philosophy of Ruby</h2>
 					</section>
 					<section>
-						<h2>Basement Level 2</h2>
-						<p>That's it, time to go back up.</p>
-						<br>
-						<a href="#/2">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
-
-				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slides.com" target="_blank">http://slides.com</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
-
-				<section>
-					<h2>Touch Optimized</h2>
-					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-					</p>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-
-				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
+						<q>Ruby is designed to make programmers happy.</q>
 					</section>
 					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-					</section>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						reveal.js comes with a few themes built in: <br>
-						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-					</p>
-				</section>
-
-				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
 						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
+							<q>가끔 사람들은 코드를 만들기 전에 생각을 정리하기 종이에 수도코드를 작성하죠.</q>
 						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
+						<p class="fragment">
+							<q>만약에 그 수도코드가 그대로 컴퓨터에서 작동한다면 어떨까요?</q>
+						</p>
+						<p class="fragment">
+							<q>저는 <b>제가 하고 싶은 일</b>에 집중하기를 원하지,</q> <br />
+							<q>언어의 public static void main...같은 걸 신경쓰고싶지 않아요.</q> <br />
+						</p>
+						<p class="fragment">
+							<q>그렇기 때문에 루비를 <b>간결한</b> 언어로 만들었습니다.</q>
+						</p>
 					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code class="hljs">&lt;section data-background="image.png"&gt;</code></pre>
+					<section>
+						<p>
+							<q>...특히 엔지니어들이 컴퓨터 중심으로 사고하는 경우가 많아요.</q>
+						</p>
+						<p class="fragment">
+							<q>"이렇게 하면  컴퓨터가 더 빨라질거야. <br />이렇게 하면 컴퓨터가 더 효율적으로 작업할거야. <br />이렇게 하면 컴퓨터가..."</q>
+						</p>
+						<p class="fragment">
+							<q>우리는 사람이 프로그래밍을 할때 어떻게 느끼는지, <br />프로그램을 사용할 때 어떻게 느끼는지를 더 생각해야 해요.</q>
+						</p>
+						<p class="fragment">
+							<q>우리가 주인이고, 컴퓨터가 노예입니다. - <a href="http://www.artima.com/intv/ruby.html">Matz</a></q>
+						</p>
 					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
+					<section data-background="./IE001464410_STD.jpg">
+						<h3><strike>이 사진은 발표자의 정치적 견해와 관계가 없습니다.</strike></h3>
 					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-						</div>
-					</section>
-					<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
-						<h2>... and GIFs!</h2>
-					</section>
-				</section>
-
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-					</p>
-					<pre><code class="hljs">Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-				</section>
-
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
 				</section>
 
 				<section>
-					<h2>Pretty Code</h2>
-					<pre><code class="hljs" data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
+					<section>
+						<h2 class="fragment">Python Way</h2>
+						<q>One and Only Way to do things</q>
+					</section>
+					<section>
+						<h2 class="fragment" data-fragment-index="2">Perl Way</h2>
+						<h2>TIMTOWDI</h2> 
+						<q class="fragment" data-fragment-index="1">There Is More Than One Way To Do It</q>
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<p>Ruby is a dynamic, reflective, <span class="fragment highlight-red">object-oriented</span>, <br/>general-purpose programming language.</p>
+					</section>
+					<section>
+						<h2>Object Oriented</h2>
+						<p class="fragment">루비에서 모든 값은 <b>어떤 클래스의 객체</b>입니다.</p>
+						<p class="fragment">모든 호출은 <b>어떤 클래스의 메소드</b>입니다.</p>
+					</section>
+					<section>
+						<pre><code class="ruby" data-trim>"Hello World".class # String</code></pre>
+						<pre><code class="ruby" data-trim>1.class # Fixnum</code></pre>
+						<pre><code class="ruby" data-trim>true.class # TrueClass</code></pre>
+						<pre><code class="ruby" data-trim>nil.class # NilClass</code></pre>
+					</section>
+					<section>
+						<h2>숫자를 문자로 변환하려면?</h2>
+						<pre class="fragment"><code class="python" data-trim>str(10), itoa, sprintf...</code></pre>
+						<pre class="fragment"><code class="ruby" data-trim>10.to_s</code></pre>
+						<pre class="fragment"><code class="ruby" data-trim>"20".to_i</code></pre>
+					</section>
+				</section>
 
-    var nodes = document.querySelectorAll( selector );
 
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
+				<section>
+					<section>
+						<blockquote class="twitter-tweet tw-align-center" data-conversation="none" lang="ko"><p lang="ko" dir="ltr">파이썬 프로그래머는 이 코드를 보면 a가 출력될 거라고 예상하는 것 같다. 루비 프로그래머라면 당연히 ab고...</p>&mdash; nacyot (@nacyo_t) <a href="https://twitter.com/nacyo_t/status/544497910436466689">2014년 12월 15일</a></blockquote>
+					</section>
+					<section>
+						<h2>뭐가 나올 것 같나요?</h2>
+						<pre><code class="ruby" data-trim>
+def a
+	print 'a'
+end
 
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
+def b
+	print 'b'
+end
+
+def f(arg1, arg2)
+	arg1
+end
+
+f(a,b)
+						</code></pre>
+					</section>
+					<section data-background="./1374907595_48781942.jpg">
+						<h1>왜죠??</h2>
+					</section>
+					<section>
+					<h2>다시 한번 볼까요?</h2>
+						<pre class="fragment"><code class="ruby" data-trim>
+def a()
+	print 'a'
+end
+
+def b()
+	print 'b'
+end
+
+def f(arg1, arg2)
+	arg1
+end
+
+f(a(),b())
+						</code></pre>
+						<p class="fragment">함수 호출에서 <b>괄호가 생략 가능</b>합니다</p>
+					</section>
+
+					<section>
+						<p>Q: 아니 그러면,</p>
+						<p class="fragment fade-out">내가 <b>함수 a</b>를 넘기는지</p>
+						<p><b>a를 호출한 값</b>을 넘기는지</p>
+						<p>어떻게 알죠? 이거 완전 쓰레기 언어 아님?</p>
+						<p class="fragment">A: 함수는 인자로 못넘겨요.</p>
+						<p class="fragment">그러니까 있든 없든 실행됩니다 >_&lt;</p>
+					</section>
+
+					<section>
+						<p>Q: 그러면 이런 것 못하나요?</p>
+						<pre class="fragment"><code class="javascript" data-trim>
+function logArrayElements(element, index, array) {
+	console.log('a[' + index + '] = ' + element);
 }
-					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
 
+// Note elision, there is no member at 2 so it isn't visited
+[2, 5, , 9].forEach(logArrayElements);
+// logs:
+// a[0] = 2
+// a[1] = 5
+// a[3] = 9
+						</code></pre>
+						<pre class="fragment"><code class="python" data-trim>
+filter(lambda x: x % 2 == 0, fib)
+						</code></pre>
+					</section>
+					<section>
+						<p><strike>되니까 얘기하겠지</strike></p>
+						<h2>Block Syntax </h2>
+					</section>
+					<section>
+						<pre><code class="ruby" data-trim>
+def func
+	return yield(10)
+end
+
+func do |x|
+	return x+3
+end
+						</pre></code>
+					</section>
+					<section>
+						<p>return 안써도 마지막 Evaluation 결과를 알아서 리턴해요</p>
+						<pre><code class="ruby" data-trim>
+def func
+	yield(10)
+end
+
+func do |x|
+	x+3
+end
+						</pre></code>
+					</section>
+
+					<section>
+						<p>do end로 묶지 않고 이렇게 쓸수도 있어요</p>
+						<pre><code class="ruby" data-trim>
+def func
+	yield(10)
+end
+
+func{ |x| x+3 }
+						</pre></code>
+					</section>
+					<section>
+						<h2>What is block?</h2>
+						<ul>
+							<li class="fragment">함수를 일반 패러미터로 넘길수는 없고 <small><strike>방법이 있긴 합니다</strike></small></li>
+							<li class="fragment">대신 별도의 syntax를 쓰는 블록이라는 것을 넘기고</li>
+							<li class="fragment">두개 이상은 넘길 수 없어요!</li>
+						</ul>
+					</section>
+				</section>
+				
 				<section>
-					<h2>Marvelous List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
+					<h2>이제 대충 보면 다 알거에요</h2>
+					<p>이제 기본 기능 탐험을 하러 갑시다.</p>
 				</section>
-
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section>
-					<h2>Tabular Tables</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
-							</tr>
-							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
-							</tr>
-							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
-							</tr>
-						</tbody>
-					</table>
-				</section>
-
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
-
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-					<iframe src="https://www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-				</section>
-
-				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the page background.
-					</p>
-				</section>
-
-				<section data-state="customevent">
-					<h2>State Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-					</p>
-				</section>
-
-				<section>
-					<h2>Much more</h2>
-					<ul>
-						<li>Right-to-left support</li>
-						<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
-					</ul>
-				</section>
-
-				<section style="text-align: left;">
-					<h1>THE END</h1>
-					<p>
-						- <a href="http://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
-					</p>
-				</section>
-
 			</div>
-
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
+		<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 		<script>
 
